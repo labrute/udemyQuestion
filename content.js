@@ -2,6 +2,9 @@
 var exportData = function () {
     var questionNum = $('div.mc-quiz-question--header--3fsHJ').find("span").text();
     var question = $('.mc-quiz-question--question-prompt--2_dlz').find("p").text(); // id is question-prompt
+    if (!question || question === '') {
+        question = $('.mc-quiz-question--question-prompt--2_dlz').text();
+    }
     var explain = $('.feedback-alert--feedback--3R277').text();
     var answers = [];
     var anw = $('.mc-quiz-answer--question-copy--314BC').toArray();
